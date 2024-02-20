@@ -1,0 +1,78 @@
+<footer class="footer">
+    <div class="section__container footer__container">
+        <div class="footer__col">
+            <h3>MyTravels<span>.</span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic vitae asperiores iste quibusdam.</p>
+        </div>
+        <div class="footer__col">
+            <h4>Support</h4>
+            <p>FAQs</p>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+            <p>Contact Us</p>
+        </div>
+        <div class="footer__col">
+            <h4>Address</h4>
+            <p>
+                <span>Email: </span> info@mytravels.com
+            </p>
+            <p>
+                <span>Phone: </span>+95 954784630
+            </p>
+        </div>
+    </div>
+    <div class="footer__bar">
+        Copyright 2024. All rights reserved. 
+    </div>
+</footer>
+<style>
+    .footer {
+        background: var(--text-dark);
+    }
+    .footer__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+        color: var(--secondary-color);
+    }
+    .footer__col h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    .footer__col h3 span {
+        color: var(--primary-color);
+    }
+    .footer__col p {
+        font-size: .8rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .footer__col p:hover {
+        color: var(--primary-color);
+    }
+    .footer__col p span {
+        font-weight: 600;
+    } 
+    .footer__col h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    .footer__bar {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: .5rem;
+        text-align: center;
+        font-size: .8rem;
+        color: var(--secondary-color);
+        border-top: 1px solid var(--text-light);
+    }
+
+    @media (width < 600px) {
+        .footer__container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

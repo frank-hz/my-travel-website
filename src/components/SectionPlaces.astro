@@ -1,0 +1,138 @@
+---
+import place1 from '../assets/images/destination-1.jpg';
+import place2 from '../assets/images/destination-2.jpg';
+import place3 from '../assets/images/destination-3.jpg';
+import place4 from '../assets/images/destination-4.jpg';
+---
+
+<section id="places" class="section__container place__container">
+    <div class="section__header">
+        <div>
+            <h2 class="section__title">Places visited</h2>
+            <p class="section__subtitle">
+                Incidunt sapiente iure, aspernatur quaerat possimus quasi error, mollitia nesciunt officiis necessitatibus veniam.
+            </p>
+        </div>
+    </div>
+    <div class="place__nav">
+        <span><i class="ri-arrow-left-s-line"></i></span>
+        <span><i class="ri-arrow-right-s-line"></i></span>
+    </div>
+    <div class="place__grid">
+        <div class="place__card">
+            <img src={place1.src} alt="Place 1">
+            <div class="place__details">
+                <p class="place__title">Islas Galapagos</p>
+                <p class="place__subtitle">Ecuador</p>
+            </div>
+        </div>
+        <div class="place__card">
+            <img src={place2.src} alt="Place 2">
+            <div class="place__details">
+                <p class="place__title">Taj Mahal</p>
+                <p class="place__subtitle">India</p>
+            </div>
+        </div>
+        <div class="place__card">
+            <img src={place3.src} alt="Place 3">
+            <div class="place__details">
+                <p class="place__title">Macchu Pichu</p>
+                <p class="place__subtitle">Perú</p>
+            </div>
+        </div>
+        <div class="place__card">
+            <img src={place4.src} alt="Place 4">
+            <div class="place__details">
+                <p class="place__title">Colosseum</p>
+                <p class="place__subtitle">Italy</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<style>
+    .place__nav {
+        display: flex;
+        gap: 1rem;
+        padding: .8rem .5rem;
+    }
+    .place__nav span {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-content: center;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 100%;
+        font-size: 1.5rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .place__nav span:hover {
+        color: var(--extra-light);
+        background: var(--primary-color);
+    }
+    .place__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    .place__card {
+        overflow: hidden;
+        position: relative;
+        isolation: isolate;
+        cursor: pointer;
+    }
+    .place__card img {
+        border-radius: 1rem;
+    }
+    .place__details {
+        position: absolute;
+        width: calc(100% - 2.5rem);
+        padding: 1rem;
+        bottom: -2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: var(--extra-light);
+        background: rgba(255,255,255,.1);
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        z-index: 1;
+        transition: .3s;
+    }
+    .place__card:hover .place__details {
+        bottom: 1rem;
+    }
+    .place__title {
+        font-size: .9rem;
+        margin-bottom: .5rem;
+    }
+    .place__subtitle {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    @media (width < 900px) {
+        .place__grid {
+            gap: .5rem;
+        }
+    }
+    @media (width < 600px) {
+        .place__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .place__nav {
+            justify-content: center;
+        }
+    }
+    @media (width < 420px) {
+        .place__grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>

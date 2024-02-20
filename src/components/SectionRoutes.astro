@@ -1,0 +1,137 @@
+---
+import trip1 from '../assets/images/trip-1.jpg';
+import trip2 from '../assets/images/trip-2.jpg';
+import trip3 from '../assets/images/trip-3.jpg';
+
+---
+
+<section id="routes" class="trip">
+    <div class="section__container trip__container">
+        <h2 class="section__title">New's Trip Package's</h2>
+        <p class="section__subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="trip__grid">
+            <div class="trip__card">
+                <img src={trip1.src} alt="Trip Package 1">
+                <div class="trip__details">
+                    <p>Rio de Janeiro, Brasil</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i> 
+                        4.2
+                    </div>
+                    <div class="booking__price">
+                        <div class="price">
+                            <span>From</span> $500
+                        </div>
+                        <button class="book__now">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <img src={trip2.src} alt="Trip Package 1">
+                <div class="trip__details">
+                    <p>Chichen Itzá, México</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i> 
+                        4.2
+                    </div>
+                    <div class="booking__price">
+                        <div class="price">
+                            <span>From</span> $300
+                        </div>
+                        <button class="book__now">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="trip__card">
+                <img src={trip3.src} alt="Trip Package 1">
+                <div class="trip__details">
+                    <p>Times Square, EE.UU</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i> 
+                        4.2
+                    </div>
+                    <div class="booking__price">
+                        <div class="price">
+                            <span>From</span> $1000
+                        </div>
+                        <button class="book__now">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view__all">
+            <button class="btn">View All</button>
+        </div>
+    </div>
+
+</section>
+<style>
+    .trip {
+        background: var(--secondary-color);
+    }
+    .trip__container :is(.section__title, .section__subtitle, .view__all) {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .trip__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+    .trip__card {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 5px 5px 30px rgba(0,0,0,.1);
+    }
+    .trip__details {
+        padding: 1rem;
+        display: grid;
+        gap: .5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        background: var(--extra-light);
+        cursor: pointer;
+    }
+    .rating {
+        color: goldenrod;
+    }
+    .booking__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .price span {
+        font-weight: 400;
+        font-size: .9rem;
+        color: var(--text-light);
+    }
+    .book__now {
+        padding: .6rem .5rem;
+        color: var(--primary-color);
+        outline: none;
+        border: 1px solid var(--primary-color);
+        border-radius: .3rem;
+        background: transparent;
+        cursor: pointer;
+        /* line-height: .75rem; */
+        transition: .3s;
+    }
+    .book__now:hover {
+        color: var(--extra-light);
+        background: var(--primary-color);
+    }
+
+    @media (width < 900px) {
+        .trip__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (width < 600px) {
+        .trip__grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>

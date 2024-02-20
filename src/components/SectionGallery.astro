@@ -1,0 +1,68 @@
+---
+import gallery1 from '../assets/images/gallery-1.jpg';
+import gallery2 from '../assets/images/gallery-2.jpg';
+import gallery3 from '../assets/images/gallery-3.jpg';
+---
+
+<section id="gallery" class="gallery-ui">
+    <div class="section__container gallery__container">
+        <div class="image__gallery">
+            <div class="gallery__col">
+                <img src={gallery1.src} alt="gallery-1">
+            </div>
+            <div class="gallery__col">
+                <img src={gallery2.src} alt="gallery-2">
+                <img src={gallery3.src} alt="gallery-3">
+            </div>
+        </div>
+        <div class="gallery__content">
+            <h2 class="section__title">Memories that inspire...</h2>
+            <p class="section__subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quasi rem nobis nemo nulla ipsa fugit eum facilis sed ratione?
+            </p>
+            <button class="btn">View All</button>
+        </div>
+    </div>
+
+
+    <br>
+</section>
+<style>
+    .gallery__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .image__gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .gallery__col {
+        display: grid;
+        place-content: center;
+        gap: 1rem;
+    }
+    .gallery__col img {
+        border-radius: 1rem;
+        box-shadow: 5px 5px 20px rgba(0,0,0,.2);
+    }
+    .gallery__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .gallery__content > div {
+        max-width: 400px;
+    }
+    .gallery__content .section__subtitle {
+        margin-bottom: 2rem;
+    }
+
+    @media (width < 600px) {
+        .gallery__container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
